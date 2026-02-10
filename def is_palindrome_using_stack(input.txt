@@ -1,0 +1,24 @@
+def is_palindrome_using_stack(input_string):
+    stack = []
+    
+    # 1. Push all characters onto the stack
+    for char in input_string:
+        stack.append(char) # Using list as a stack, append is push
+
+    reversed_string = ""
+    # 2. Pop characters to build the reversed string
+    while stack:
+        reversed_string += stack.pop() # pop() gets the last element (LIFO)
+
+    # 3. Compare the original and reversed strings
+    if input_string == reversed_string:
+        return True
+    else:
+        return False
+
+# Example Usage:
+word1 = "madam"
+word2 = "hello"
+
+print(f"'{word1}' is a palindrome: {is_palindrome_using_stack(word1)}")
+print(f"'{word2}' is a palindrome: {is_palindrome_using_stack(word2)}")
